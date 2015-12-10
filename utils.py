@@ -1,16 +1,18 @@
 with open("sorted_data.csv", "r") as file:
-    data = file.read().replace('\r\n', '')
+    data = file.read().replace('\r\n', ',')
     
 POKEMON_COUNT = 811
 COLUMNS = 8
-T_order = []#[POKEMON_COUNT]
-T_id = []#[POKEMON_COUNT]
-T_name = []#[POKEMON_COUNT]
-T_species_id = []#[POKEMON_COUNT]
-T_height = []#[POKEMON_COUNT]
-T_weight = []#[POKEMON_COUNT]
-T_base_experience = []#[POKEMON_COUNT]
-T_is_default = []#[POKEMON_COUNT]
+
+
+T_order = []
+T_id = []
+T_name = []
+T_species_id = []
+T_height = []
+T_weight = []
+T_base_experience = []
+T_is_default = []
 
 
 c1 = 0 #counts to POKEMON_COUNT * COLUMNS
@@ -19,8 +21,7 @@ data = data.split(",")
 data_length = len(data)
 
 
-
-while c1 < POKEMON_COUNT*COLUMNS -1:
+while c1 < data_length:
     T_order.append(data[c1])
     T_id.append(data[c1+1])
     T_name.append(data[c1+2])
@@ -30,9 +31,9 @@ while c1 < POKEMON_COUNT*COLUMNS -1:
     T_base_experience.append(data[c1+6])
     T_is_default.append(data[c1+7])
     c2+=1
-    c1+=7
+    c1+=8
 
-print T_name
+
     
         
         

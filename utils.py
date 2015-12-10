@@ -34,7 +34,15 @@ while c1 < data_length:
     c1+=8
 
 
-    
+def search_id(number):
+    c1 = 0
+    while c1 < POKEMON_COUNT:
+        if T_id[c1] == str(number):
+            return c1
+        c1+=1
+
+
+print T_name[search_id(155)]
         
         
 

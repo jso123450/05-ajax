@@ -2,15 +2,16 @@ import urllib2, json
 import pprint
 import sys
 import urllib
-#hereee's johnny
+import pykemon
+
 from flask import Flask, render_template, redirect
-#for google book api: pip install --upgrade google-api-python-client
-#for goodreads api: http://www.goodreads.com/api/ (cannot find way to pull full list of random books)
-#http://www.readbookonline.net/titles-a.htm nice sized list
+
 app = Flask(__name__)
+
 @app.route("/")
-def home():
-    return "home"
+@app.route("/index")
+def index():
+    return render_template("index.html")
 
 if __name__=="__main__":
     app.debug = True

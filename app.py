@@ -1,19 +1,37 @@
+# Library/Package Imports
 import urllib2, json
 import pprint
 import sys
 import urllib
 import pykemon
-<<<<<<< HEAD
 
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, request
+
+# File Imports
+import utils
 
 app = Flask(__name__)
 
+# Routes
 @app.route("/")
 @app.route("/index")
 def index():
     return render_template("index.html")
 
+@app.route("/searchbyid")
+def search_by_id():
+    pokemon_id = request.args.get("searchIDBox")
+    print pokemon_id
+    pokemon = utils.get_pokemon_by_id(pokemon_id)
+    return json.dumps(pokemon)
+
+@app.route("/searchbyname")
+def search_by_name():
+    pokemon_name = request.args.get("searchNameBox").lower()
+    pokemons = utils.get_pokemons_by_name(pokemon_name)
+    return json.dumps(pokemons)
+
+# Main
 if __name__=="__main__":
     app.debug = True
     app.run(host='0.0.0.0', port=8000)

@@ -3,6 +3,7 @@ import pprint
 import sys
 import urllib
 import pykemon
+<<<<<<< HEAD
 
 from flask import Flask, render_template, redirect
 

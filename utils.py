@@ -36,8 +36,9 @@ while c1 < data_length:
 
 def search_id(number):
     '''
-    input the pokemon's id number(unique) parse for exact match
-    returns the index
+    Looks through the table with OFFICIAL ids and returns the index with that id
+    Input: (int) Search official ID number
+    Return: Index for the other tables
     '''
     c1 = 0
     while c1 < POKEMON_COUNT:
@@ -47,8 +48,9 @@ def search_id(number):
 
 def search_name(name):
     '''
-    input string
-    return list of indices that fit the string
+    Looks through the table with names and returns a list of indices that have input in the table of names
+    Input: (string) Search string.
+    Return: List of indices with names that contain input string.
     '''
     c1 = 0
     index_list = []

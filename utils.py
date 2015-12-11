@@ -35,14 +35,43 @@ while c1 < data_length:
 
 
 def search_id(number):
+    '''
+    input the pokemon's id number(unique) parse for exact match
+    returns the index
+    '''
     c1 = 0
     while c1 < POKEMON_COUNT:
         if T_id[c1] == str(number):
             return c1
         c1+=1
 
+def search_name(name):
+    '''
+    input string
+    return list of indices that fit the string
+    '''
+    c1 = 0
+    index_list = []
+    while c1 < POKEMON_COUNT:
+        if name in T_name[c1]:
+            index_list.append(c1)
+        c1+=1
+    return index_list
 
-print T_name[search_id(155)]
+if __name__=="__main__":
+    #test search_id(n)
+    print T_name[search_id(124)]
+    print T_name[search_id(204)]
+    #test search_name(name)
+    c1 = 0
+    search_list = search_name("mew")
+    while c1 < len(search_list):
+        print T_name[search_list[c1]]
+        c1+=1
+
+
+    
+
         
         
 

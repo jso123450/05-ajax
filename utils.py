@@ -112,7 +112,7 @@ def get_pokemons_by_name(pokemon_name):
         pokemon = {}
         pokemon['order'] = T_order[pokemon_index]
         pokemon['id'] = T_id[pokemon_index]
-        pokemon['name'] = pokemon_name
+        pokemon['name'] = T_name[pokemon_index]
         pokemon['species_id'] = T_species_id[pokemon_index]    
         pokemon['height'] = T_height[pokemon_index]
         pokemon['weight'] = T_weight[pokemon_index]

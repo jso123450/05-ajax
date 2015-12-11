@@ -53,4 +53,3 @@ searchNameButton.click(function(){
 	};
     });
 });
-

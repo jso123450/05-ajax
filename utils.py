@@ -50,7 +50,6 @@ def search_id(number):
     
     Params:
        number - (integer) the Pokemon whose ID number you have.
-
     Returns:
        c1 - (integer) the index of the Pokemon in the lists above
     
@@ -63,10 +62,8 @@ def search_id(number):
 
 def search_name_list(name):
     """ Searches for a Pokemon by its name.
-
     Params:
          name - (String) (part of) the name of the Pokemon you are searching for.
-
     Returns:
          index_list - (integer list) list of indexes of Pokemon you could want
     """
@@ -85,10 +82,8 @@ def search_name_list(name):
 
 def get_pokemon_by_id(pokemon_id):
     """ Gets all the information about a specific Pokemon by its ID.
-
     Params:
         pokemon_id - (integer) the ID of the pokemon you are looking for
-
     Retuns:
         pokemon - (dictionary) whose keys are the attributes
     """
@@ -106,10 +101,8 @@ def get_pokemon_by_id(pokemon_id):
 
 def get_pokemons_by_name(pokemon_name):
     """ Gets all the information about Pokemons whose name contain pokemon_name.
-
     Params:
         pokemon_name - (string) the name the Pokemons' name should contain
-
     Retuns:
         pokemons - (dictionary of dictionaries) whose keys are the pokemon indices
     """

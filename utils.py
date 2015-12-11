@@ -104,27 +104,6 @@ def get_pokemon_by_id(pokemon_id):
     pokemon['is_default'] = T_is_default[pokemon_index]
     return pokemon
 
-def get_pokemon_by_name(pokemon_name):
-    """ Gets all the information about a specific Pokemon by its name.
-
-    Params:
-        pokemon_name - (string) the (exact) name of the Pokemon you are looking for
-
-    Retuns:
-        pokemon - (dictionary) whose keys are the attributes
-    """
-    pokemon_index = search_name_exact(pokemon_name)
-    pokemon = {}
-    pokemon['order'] = T_order[pokemon_index]
-    pokemon['id'] = T_id[pokemon_index]
-    pokemon['name'] = pokemon_name
-    pokemon['species_id'] = T_species_id[pokemon_index]    
-    pokemon['height'] = T_height[pokemon_index]
-    pokemon['weight'] = T_weight[pokemon_index]
-    pokemon['base_experience'] = T_base_experience[pokemon_index]
-    pokemon['is_default'] = T_is_default[pokemon_index]
-    return pokemon
-
 def get_pokemons_by_name(pokemon_name):
     """ Gets all the information about Pokemons whose name contain pokemon_name.
 
@@ -137,5 +116,14 @@ def get_pokemons_by_name(pokemon_name):
     pokemon_list = search_name_list(pokemon_name)
     pokemons = {}
     for pokemon_index in pokemon_list:
-        pokemons[str(pokemon_index)] = get_pokemon_by_name(pokemon_name)
+        pokemon = {}
+        pokemon['order'] = T_order[pokemon_index]
+        pokemon['id'] = T_id[pokemon_index]
+        pokemon['name'] = pokemon_name
+        pokemon['species_id'] = T_species_id[pokemon_index]    
+        pokemon['height'] = T_height[pokemon_index]
+        pokemon['weight'] = T_weight[pokemon_index]
+        pokemon['base_experience'] = T_base_experience[pokemon_index]
+        pokemon['is_default'] = T_is_default[pokemon_index]
+        pokemons[str(pokemon_index)] = pokemon
     return pokemons

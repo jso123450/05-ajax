@@ -53,3 +53,26 @@ searchNameButton.click(function(){
 	};
     });
 });
+
+function getRandomInt(min,max){
+    return (Math.floor(Math.random() * (max - min + 1)) + min);
+};
+
+randomProfile = function randomProfile(){
+    var random = getRandomInt(0,811);
+    console.log(random);
+    $.getJSON("/randomprofile",{randomProfileBox:random},function(random){
+	$("#randomProfile").empty();
+	$("#randomProfile").append($("<li id='name'>"+random.name
+				     + "<div>"  //inside table of data
+				     + "<table border='1'>"
+				     + "<tr><td>ID</td><td>" + random.id + "</td></tr>"
+				     + "<tr><td>Species ID</td><td>" + random.species_id + "</td></tr>"
+				     + "<tr><td>Height</td><td>" + random.height + "</td></tr>"
+				     + "<tr><td>Weight</td><td>" + random.weight + "</td></tr>"
+				     + "<tr><td>Base Experience</td><td>" + random.base_experience + "</td></tr>"
+				     + "</table></div></li>"));
+    });
+};
+
+setInterval(randomProfile,3000);

@@ -1,11 +1,7 @@
 # Library/Package Imports
-import urllib2, json
-import pprint
-import sys
-import urllib
-
-
+import json
 from flask import Flask, render_template, request
+import random
 
 # File Imports
 import utils
@@ -30,6 +26,12 @@ def search_by_name():
     pokemon_name = request.args.get("searchNameBox").lower()
     pokemons = utils.get_pokemons_by_name(pokemon_name)
     return json.dumps(pokemons)
+
+@app.route("/randomprofile")
+def random_profile():
+    pokemon_id = request.args.get("randomProfileBox")
+    pokemon = utils.get_pokemon_by_id(pokemon_id)
+    return json.dumps(pokemon)
 
 # Main
 if __name__=="__main__":

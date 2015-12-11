@@ -27,8 +27,12 @@
       </ul>
     </div>
 
+    <div id="profileDiv">
+      <ul id="profile">
+      </ul>
+    </d
+
     <div id="randomProfileDiv">
-      <input id="randomProfileBox" type="hidden"></input>
       <ul id="randomProfile">
       </ul>
     </div>

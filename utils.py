@@ -73,25 +73,15 @@ def search_name_list(name):
     c1 = 0
     index_list = []
     while c1 < POKEMON_COUNT:
+        # return a list with only that index if the names match perfectly
+        if name == T_name[c1]:
+            index_list = [c1]
+            return index_list
         if name in T_name[c1]:
             index_list.append(c1)
         c1+=1
+    # if no perfect matches are made, then it will return a list of possible Pokemon
     return index_list
-
-def search_name_exact(name):
-    """ Searches for a Pokemon who has the exact name you specified.
-
-    Params:
-        name - (String) the name of the Pokemon you are searching for.
-
-    Returns:
-        pokemon_index - (integer) the index of the Pokemon you are looking for
-    """
-    pokemon_index = 0
-    while pokemon_index < POKEMON_COUNT:
-        if name == T_name[pokemon_index]:
-            return pokemon_index
-        pokemon_index+= 1
 
 def get_pokemon_by_id(pokemon_id):
     """ Gets all the information about a specific Pokemon by its ID.

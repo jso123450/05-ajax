@@ -10,7 +10,7 @@ searchIDButton.click(function(){
 	console.log(IDQuery);
 	$("#resultList").empty();
 	$("#resultList").append($("<li id='name0'>Name : "+IDQuery.name+"</li>"));
-	});
+    });
 });
 
 var searchNameButton = $("#searchNameButton");
@@ -32,3 +32,4 @@ searchNameButton.click(function(){
 	};
     });
 });
+
